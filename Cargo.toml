@@ -21,7 +21,8 @@ cfg-if = "1"
 fastrand = "2.0.1"
 
 [target.'cfg(any(unix, target_os = "wasi"))'.dependencies]
-rustix = { version = "0.38.31", features = ["fs"] }
+# rustix = { version = "0.38.31", features = ["fs"] }
+rustix = { git = "https://github.com/AOSC-Tracking/rustix.git", branch = "aosc/libc-mips64r6el", features = ["fs"] }
 
 [target.'cfg(windows)'.dependencies.windows-sys]
 version = "0.52"
